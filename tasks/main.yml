@@ -1,2 +1,22 @@
 ---
-# tasks file for ansible-role-netdata_node
+- name: Copy netdata.conf
+  template:
+    src: netdata.conf.j2
+    dest: /etc/netdata/netdata.conf
+    owner: netdata
+    group: netdata
+    mode: 0600
+  notify:
+    - Restart Netdata
+  become: true
+
+- name: Copy stream.conf
+  template:
+    src: stream.conf.j2
+    dest: /etc/netdata/stream.conf
+    owner: netdata
+    group: netdata
+    mode: 0600
+  notify:
+    - Restart Netdata
+  become: true

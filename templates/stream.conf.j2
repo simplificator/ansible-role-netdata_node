@@ -1,7 +1,7 @@
 [stream]
     enabled = yes
-    destination = {{ netdata_stream_destination | mandatory }}
-    api key = {{ netdata_stream_api_key | mandatory }}
+    destination = {{ netdata_client_stream_destination | mandatory }}
+    api key = {{ netdata_client_stream_key | mandatory }}
     CAfile = /etc/netdata/ssl/cert.pem
     timeout seconds = 60
     send charts matching = *

@@ -8,7 +8,7 @@
 
   vars:
     netdata_registry_to_announce: "https://registry.example.com"
-    netdata_server_certificate: certificate
-    netdata_server_certificate_key: key
-    netdata_stream_api_key: "958D31F0-C066-42CD-AE71-10D293E43F79"
-    netdata_stream_destination: "collector.example.com:19999:SSL"
+    netdata_installation_certificate: certificate
+    netdata_installation_certificate_key: key
+    netdata_client_stream_key: "958D31F0-C066-42CD-AE71-10D293E43F79"
+    netdata_client_stream_destination: "collector.example.com:19999:SSL"

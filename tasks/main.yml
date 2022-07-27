@@ -20,3 +20,21 @@
   notify:
     - Restart Netdata
   become: true
+
+- name: Create cloud configuration directory
+  file:
+    path: /var/lib/netdata/cloud.d
+    state: directory
+    owner: "netdata"
+    group: "netdata"
+    mode: "0600"
+
+- name: Copy cloud.conf
+  copy:
+    src: cloud.d/cloud.conf
+    dest: /var/lib/netdata/cloud.d/cloud.conf
+    owner: "netdata"
+    group: "netdata"
+    mode: "0600"
+  notify:
+    - "Restart Netdata"

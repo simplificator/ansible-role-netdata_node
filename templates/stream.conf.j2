@@ -3,6 +3,7 @@
     destination = {{ netdata_client_stream_destination | mandatory }}
     api key = {{ netdata_client_stream_key | mandatory }}
     CAfile = /etc/netdata/ssl/cert.pem
+    ssl skip certificate verification = yes
     timeout seconds = 60
     send charts matching = *
     buffer size bytes = 1048576

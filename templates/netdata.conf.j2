@@ -1,13 +1,18 @@
+# SOURCE: https://github.com/netdata/netdata/blob/8c84a6241ba89cd10b257ca37b442cf358ac7597/src/daemon/config/README.md
 [global]
-    update every = 15
-    memory mode = none
     {% if netdata_hostname != "auto-detected" %}
     hostname = {{ netdata_hostname }}
     {% endif %}
 
+[db]
+    update every = 15
+    mode = none
+
+# SOURCE: https://github.com/netdata/netdata/blob/8c84a6241ba89cd10b257ca37b442cf358ac7597/src/web/server/README.md
 [web]
     mode = none
 
+# SOURCE: https://github.com/netdata/netdata/blob/8c84a6241ba89cd10b257ca37b442cf358ac7597/src/registry/README.md
 [registry]
     enabled = no
     registry to announce = {{ netdata_registry_to_announce | mandatory }}
